@@ -1,12 +1,18 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-/* 
+html {
+  font-size: 60px;
+}
 
-    You can write your own styles here...
-    
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
+body {
+  font-family: "Roboto", sans-serif;
+}
 
-*/
+.fa-clock {
+  font-size: 4rem;
+  color: white;
+}
