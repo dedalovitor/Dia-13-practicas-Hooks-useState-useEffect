@@ -7,7 +7,7 @@ const Home = () => {
 	const [count, setCount] = useState(0);
 	const [show, setShow] = useState(false);
 	const [timer, setTimer] = useState(0);
-	const [isTimerRunning, setIsTimerRunning] = useState(true);
+	const [isTimerRunning, setIsTimerRunning] = useState(false);
 
 	useEffect(() => {
 		let interval;
@@ -16,16 +16,16 @@ const Home = () => {
 				setTimer((Timer) => Timer + 1);
 			}, 1000);
 		}
-
+		console.log("timer is running!")
 		return () => clearInterval(interval);
-	},);
+	});
 
 	const stopTimer = () => {
 		setIsTimerRunning(false);
 	};
 
 	const resetTimer = () => {
-		setTimer(0);
+		setTimer(2);
 		setIsTimerRunning(true);
 	};
 
@@ -117,9 +117,10 @@ const Home = () => {
 				</div>
 				<div className="d-flex flex-row justify-content-center">
 					<button onClick={() => { setTimer(timer - 10) }}>- 10 seconds</button>
-					<button onClick={() => { stopTimer() }}>Stop</button>
+					<button onClick={stopTimer}>Stop</button>
 					<button onClick={resetTimer}>Reset</button>
 					<button onClick={resumeTimer}>Resume</button>
+					<button onClick={resumeTimer}>Start</button>
 				</div>
 			</div>
 
